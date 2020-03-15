@@ -1,0 +1,13 @@
+<div>
+  <a [routerLink]="['/tours/new']" routerLinkActive="router-link-active">New</a>
+</div>
+<div>
+  <div
+    style="margin: 10px; width: 400px; height: 300px;;"
+    *ngFor="let tour of tours"
+  >
+    <h3>{{ tour.name }}</h3>
+    <p>{{ tour.description }}</p>
+    <button [routerLink]="['/tours', tour.id]">Detail</button>
+  </div>
+</div>
