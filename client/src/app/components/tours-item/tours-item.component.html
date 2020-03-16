@@ -1,5 +1,5 @@
 <div *ngIf="!isError; else templateName">
-  <h3>{{ tour.name }}</h3>
+  <h3>{{ tour?.name }}</h3>
   <p>{{ tour?.description }}</p>
   <button [routerLink]="['/tours']" routerLinkActive="router-link-active">
     Back

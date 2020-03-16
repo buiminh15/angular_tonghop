@@ -8,6 +8,8 @@
   >
     <h3>{{ tour.name }}</h3>
     <p>{{ tour.description }}</p>
-    <button [routerLink]="['/tours', tour.id]">Detail</button>
+    <button (click)="delete(tour._id)" >Delete</button>
+    <button  >Update</button>
+    <button [routerLink]="['/tours', tour._id]">Detail</button>
   </div>
 </div>

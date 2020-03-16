@@ -20,4 +20,11 @@ export class ToursListComponent implements OnInit {
       }
     });
   }
+
+  delete(id) {
+    this.service.delete(id).subscribe(()=> {
+      alert('Delete Successfully')
+      location.reload();
+    })
+  }
 }
