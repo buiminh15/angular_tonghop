@@ -15,12 +15,12 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {}
   search() {
-    let checkbox = <HTMLInputElement>document.getElementById('gte');
-    let duration = (<HTMLInputElement>document.getElementById('duration'))
+    const checkbox = <HTMLInputElement>document.getElementById('gte');
+    const duration = (<HTMLInputElement>document.getElementById('duration'))
       .value;
-    let difficulty = (<HTMLInputElement>document.getElementById('difficulty'))
+    const difficulty = (<HTMLInputElement>document.getElementById('difficulty'))
       .value;
-    let query: any = { duration: duration, difficulty: difficulty };
+    const query: any = { duration: duration, difficulty: difficulty };
     if (duration === '') {
       delete query['duration']
     }

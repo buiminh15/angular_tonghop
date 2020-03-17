@@ -10,6 +10,7 @@ import { NewTourComponent } from "./components/new-tour/new-tour.component";
 import { SearchComponent } from './components/search/search.component';
 import { SortComponent } from './components/sort/sort.component';
 import { LimitFieldsComponent } from './components/limit-fields/limit-fields.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LimitFieldsComponent } from './components/limit-fields/limit-fields.com
     NewTourComponent,
     SearchComponent,
     SortComponent,
-    LimitFieldsComponent
+    LimitFieldsComponent,
+    PaginationComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

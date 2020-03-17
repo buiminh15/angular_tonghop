@@ -1,0 +1,28 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class=" class"><a class="page-link"  >Previous</a></li>
+    <li [className]="'active'"><a class="page-link" (click)="page(1)">1</a></li>
+    <li class="page-item"><a class="page-link"  (click)="page(2)">2</a></li>
+    <li class="page-item"><a class="page-link"  (click)="page(3)">3</a></li>
+    <li class=" class"><a class="page-link"  >Next</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <div *ngFor="let tour of tours">
+    <p>ratingsAverage: {{tour?.ratingsAverage}}</p>
+      <p>ratingsQuantity: {{tour?.ratingsQuantity}}</p>
+      <p> rating : {{tour?.rating}}</p>
+      <p>createdAt: {{tour?.createdAt}}</p>
+      <p> name: {{tour?.name}}</p>
+      <p>duration: {{tour?.duration}}</p>
+      <p> images: {{tour?.images}}</p>
+      <p>startDates: {{tour?.startDates}}</p>
+      <p>difficulty: {{tour?.difficulty}}</p>
+      <p>maxGroupSize: {{tour?.maxGroupSize}}</p>
+      <p>price: {{tour?.price}}</p>
+      <p>summary: {{tour?.summary}}</p>
+      <p>description: {{tour?.description}}</p>
+      <hr>
+  </div>
+</div>
