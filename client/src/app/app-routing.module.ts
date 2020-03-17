@@ -4,9 +4,11 @@ import { ToursListComponent } from './components/tours-list/tours-list.component
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   { path: '', component: ToursListComponent },
+  { path: 'search', component: SearchComponent },
   { path: 'tours/new', component: NewTourComponent },
   { path: 'tours', pathMatch: 'full', redirectTo: '' },
   { path: 'tours/:id', component: ToursItemComponent },

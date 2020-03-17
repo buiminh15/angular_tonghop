@@ -5,10 +5,10 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DataService {
-  constructor(private url: string, private http: HttpClient) { }
+  constructor(private url: string, private http: HttpClient) {}
 
-  getAll() {
-    return this.http.get(this.url);
+  getAll(queryParams) {
+    return this.http.get(this.url, { params: queryParams });
   }
 
   get(id) {
@@ -20,13 +20,11 @@ export class DataService {
   }
 
   update(resource) {
-    return this.http.patch(
-      this.url + '/' + resource.id,
-      resource
-    );
+    return this.http.patch(this.url + '/' + resource.id, resource);
   }
 
   delete(id) {
     return this.http.delete(this.url + '/' + id);
   }
+
 }

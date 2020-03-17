@@ -7,6 +7,7 @@ import { ToursListComponent } from "./components/tours-list/tours-list.component
 import { ToursItemComponent } from "./components/tours-item/tours-item.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { NewTourComponent } from "./components/new-tour/new-tour.component";
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NewTourComponent } from "./components/new-tour/new-tour.component";
     ToursListComponent,
     ToursItemComponent,
     PageNotFoundComponent,
-    NewTourComponent
+    NewTourComponent,
+    SearchComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
