@@ -1,0 +1,18 @@
+<div>
+  <button (click)='sort()'>Sort</button>
+  <input type="text" id="sort" name="sort">
+</div>
+
+<div>
+  <h4>Results</h4>
+  <div *ngIf="!isError;else templateName">
+    <div *ngFor="let tour of tours">
+      <h3>{{ tour.name }}</h3>
+      <p style="color: chocolate;">Price: {{tour.price}}</p>
+      <p>{{ tour.description }}</p>
+    </div>
+  </div>
+  <ng-template #templateName>
+    <h3>{{ message}}</h3>
+  </ng-template>
+</div>

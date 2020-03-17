@@ -7,9 +7,14 @@ import { map } from 'rxjs/operators';
 export class DataService {
   constructor(private url: string, private http: HttpClient) {}
 
+
   getAll(queryParams) {
     return this.http.get(this.url, { params: queryParams });
   }
+
+  // getAll(queryParams) {
+  //   return this.http.get(this.url, { params: queryParams });
+  // }
 
   get(id) {
     return this.http.get(this.url + '/' + id);
@@ -27,4 +32,7 @@ export class DataService {
     return this.http.delete(this.url + '/' + id);
   }
 
+  getQuery(num) {
+    return this.http.get(this.url + '?duration[gte]=' + num);
+  }
 }

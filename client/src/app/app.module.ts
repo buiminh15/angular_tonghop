@@ -8,6 +8,8 @@ import { ToursItemComponent } from "./components/tours-item/tours-item.component
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
 import { NewTourComponent } from "./components/new-tour/new-tour.component";
 import { SearchComponent } from './components/search/search.component';
+import { SortComponent } from './components/sort/sort.component';
+import { LimitFieldsComponent } from './components/limit-fields/limit-fields.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SearchComponent } from './components/search/search.component';
     ToursItemComponent,
     PageNotFoundComponent,
     NewTourComponent,
-    SearchComponent
+    SearchComponent,
+    SortComponent,
+    LimitFieldsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

@@ -1,0 +1,45 @@
+<div id="container">
+  <div id="left" >
+    <h4>Result Normal</h4>
+    <div *ngFor="let tour of tours" style="margin-bottom: 16px;">
+      <p>ratingsAverage: {{tour?.ratingsAverage}}</p>
+      <p>ratingsQuantity: {{tour?.ratingsQuantity}}</p>
+      <p> rating : {{tour?.rating}}</p>
+      <p>createdAt: {{tour?.createdAt}}</p>
+      <p> name: {{tour?.name}}</p>
+      <p>duration: {{tour?.duration}}</p>
+      <p>difficulty: {{tour?.difficulty}}</p>
+      <p>maxGroupSize: {{tour?.maxGroupSize}}</p>
+      <p>price: {{tour?.price}}</p>
+      <p>summary: {{tour?.summary}}</p>
+      <p>description: {{tour?.description}}</p>
+      <hr>
+    </div>
+  </div>
+  <div id="right">
+    <div>
+      <h4>Limit Fields</h4>
+      <p>price,name</p>
+      <button (click)="limit()">Limit Fields</button>
+      <input type="text" id="fields" name="fields">
+    </div>
+    <div>
+      <h4>Result</h4>
+    </div>
+    <div *ngFor="let tour of toursLimit" style="margin-bottom: 16px;">
+      <p>ratingsAverage: {{tour?.ratingsAverage}}</p>
+      <p>ratingsQuantity: {{tour?.ratingsQuantity}}</p>
+      <p> rating : {{tour?.rating}}</p>
+      <p>createdAt: {{tour?.createdAt}}</p>
+      <p> name: {{tour?.name}}</p>
+      <p>duration: {{tour?.duration}}</p>
+      <p>difficulty: {{tour?.difficulty}}</p>
+      <p>maxGroupSize: {{tour?.maxGroupSize}}</p>
+      <p>price: {{tour?.price}}</p>
+      <p>summary: {{tour?.summary}}</p>
+      <p>description: {{tour?.description}}</p>
+      <hr>
+    </div>
+  </div>
+
+</div>

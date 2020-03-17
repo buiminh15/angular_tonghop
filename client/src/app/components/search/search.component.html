@@ -2,12 +2,25 @@
   <h4>Search</h4>
   <label for="">Duration </label>
   <input type="text"  name="duration" id="duration" >
-  <button (click)="search()">Search</button>
+  <input type="checkbox"  name="gte" id="gte" >
+  <label for="">Greater than or equals </label>
 </div>
 <div>
-  <h4>Results</h4>
-  <div *ngFor="let tour of tours">
-    <h3>{{ tour.name }}</h3>
-    <p>{{ tour.description }}</p>
-  </div>
+  <label for="">Difficulty </label>
+  <input type="text"  name="difficulty" id="difficulty" >
 </div>
+<button (click)="search()">Search</button>
+<div>
+  <h4>Results</h4>
+  <div *ngIf="!isError;else templateName" >
+    <div *ngFor="let tour of tours">
+      <h3>{{ tour.name }}</h3>
+      <p style="color: chocolate;">Price: {{tour.price}}</p>
+      <p>{{ tour.description }}</p>
+    </div>
+  </div>
+  <ng-template #templateName>
+    <h3>{{ message}}</h3>
+  </ng-template>
+</div>
+
