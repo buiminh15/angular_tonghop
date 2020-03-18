@@ -13,6 +13,7 @@ import { LimitFieldsComponent } from './components/limit-fields/limit-fields.com
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { AliasComponent } from './components/alias/alias.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { AliasComponent } from './components/alias/alias.component';
     SortComponent,
     LimitFieldsComponent,
     PaginationComponent,
-    AliasComponent
+    AliasComponent,
+
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

@@ -10,6 +10,7 @@ import { LimitFieldsComponent } from './components/limit-fields/limit-fields.com
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { AliasComponent } from './components/alias/alias.component';
 
+
 const routes: Routes = [
   { path: '', component: ToursListComponent },
   { path: 'top-5-cheap', component: AliasComponent },
