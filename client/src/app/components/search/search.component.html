@@ -12,7 +12,7 @@
 <button (click)="search()">Search</button>
 <div>
   <h4>Results</h4>
-  <div *ngIf="!isError;else templateName" >
+  <div class="container" *ngIf="!isError;else templateName" >
     <div *ngFor="let tour of tours">
       <h3>{{ tour.name }}</h3>
       <p style="color: chocolate;">Price: {{tour.price}}</p>

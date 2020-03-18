@@ -7,14 +7,13 @@ import { map } from 'rxjs/operators';
 export class DataService {
   constructor(private url: string, private http: HttpClient) {}
 
+  getAllAlias(alias){
+    return this.http.get(this.url + '/' + alias);
+  }
 
   getAll(queryParams) {
     return this.http.get(this.url, { params: queryParams });
   }
-
-  // getAll(queryParams) {
-  //   return this.http.get(this.url, { params: queryParams });
-  // }
 
   get(id) {
     return this.http.get(this.url + '/' + id);

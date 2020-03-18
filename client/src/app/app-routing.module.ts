@@ -8,9 +8,11 @@ import { SearchComponent } from './components/search/search.component';
 import { SortComponent } from './components/sort/sort.component';
 import { LimitFieldsComponent } from './components/limit-fields/limit-fields.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { AliasComponent } from './components/alias/alias.component';
 
 const routes: Routes = [
   { path: '', component: ToursListComponent },
+  { path: 'top-5-cheap', component: AliasComponent },
   { path: 'pagination', component: PaginationComponent },
   { path: 'limit', component: LimitFieldsComponent },
   { path: 'sort', component: SortComponent },

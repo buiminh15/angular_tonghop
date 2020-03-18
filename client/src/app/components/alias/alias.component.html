@@ -1,0 +1,16 @@
+<div class="container">
+  <h4>Top 5 Cheap</h4>
+</div>
+<div class="container" *ngIf="!isError;else templateName">
+  <div *ngFor="let tour of tours">
+    <p>ratingsAverage: {{tour?.ratingsAverage}}</p>
+    <p> name: {{tour?.name}}</p>
+    <p>difficulty: {{tour?.difficulty}}</p>
+    <p>price: {{tour?.price}}</p>
+    <p>summary: {{tour?.summary}}</p>
+    <hr>
+  </div>
+  <ng-template #templateName>
+    <h3>{{ message}}</h3>
+  </ng-template>
+</div>

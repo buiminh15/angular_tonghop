@@ -15,7 +15,7 @@ export class PaginationComponent implements OnInit {
   constructor(private service: ToursService) { }
 
   ngOnInit() {
-    // this.page(1)
+    this.page(1)
   }
 
   page(pageNum) {
