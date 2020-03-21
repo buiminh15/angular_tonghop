@@ -12,6 +12,7 @@ import { SortComponent } from './components/sort/sort.component';
 import { LimitFieldsComponent } from './components/limit-fields/limit-fields.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { AliasComponent } from './components/alias/alias.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AliasComponent } from './components/alias/alias.component';
     LimitFieldsComponent,
     PaginationComponent,
     AliasComponent,
+    StatsComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],

@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 export class DataService {
   constructor(private url: string, private http: HttpClient) {}
 
-  getAllAlias(alias){
+  getAllAlias(alias) {
     return this.http.get(this.url + '/' + alias);
   }
 
@@ -33,5 +33,9 @@ export class DataService {
 
   getQuery(num) {
     return this.http.get(this.url + '?duration[gte]=' + num);
+  }
+
+  getStats() {
+    return this.http.get(this.url + '/tour-stats');
   }
 }

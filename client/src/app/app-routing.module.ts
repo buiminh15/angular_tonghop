@@ -1,3 +1,4 @@
+import { StatsComponent } from './components/stats/stats.component';
 import { NewTourComponent } from './components/new-tour/new-tour.component';
 import { ToursItemComponent } from './components/tours-item/tours-item.component';
 import { ToursListComponent } from './components/tours-list/tours-list.component';
@@ -13,6 +14,7 @@ import { AliasComponent } from './components/alias/alias.component';
 
 const routes: Routes = [
   { path: '', component: ToursListComponent },
+  { path: 'tour-stats', component: StatsComponent },
   { path: 'top-5-cheap', component: AliasComponent },
   { path: 'pagination', component: PaginationComponent },
   { path: 'limit', component: LimitFieldsComponent },
