@@ -1,12 +1,18 @@
 const fs = require('fs')
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
 const colors = require('colors')
-
 // Load models
 const Tour = require('./models/tourModel')
 
 // Connect to DB
-const MONGO_URI = 'mongodb+srv://minhbb:12345@cluster0-d9dj2.mongodb.net/natours-fake?retryWrites=true&w=majority'
+// const MONGO_URI = 'mongodb+srv://minhbb:12345@cluster0-d9dj2.mongodb.net/natours-fake?retryWrites=true&w=majority'
+
+dotenv.config({path: './config.env'})
+
+const MONGO_URI = process.env.DATABASE.replace(
+  '<PASSWORD>', process.env.DATABASE_PASSWORD
+)
 
 mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
