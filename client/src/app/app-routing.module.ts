@@ -10,10 +10,14 @@ import { SortComponent } from './components/sort/sort.component';
 import { LimitFieldsComponent } from './components/limit-fields/limit-fields.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { AliasComponent } from './components/alias/alias.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 const routes: Routes = [
-  { path: '', component: ToursListComponent },
+  { path: '', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+  // { path: '', component: ToursListComponent },
   { path: 'tour-stats', component: StatsComponent },
   { path: 'top-5-cheap', component: AliasComponent },
   { path: 'pagination', component: PaginationComponent },

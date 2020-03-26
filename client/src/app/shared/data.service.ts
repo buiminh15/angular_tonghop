@@ -7,6 +7,13 @@ import { map } from 'rxjs/operators';
 export class DataService {
   constructor(private url: string, private http: HttpClient) {}
 
+  signup(newUser) {
+    return this.http.post(this.url + '/signup', newUser);
+  }
+  login(user) {
+    return this.http.post(this.url + '/login', user);
+  }
+
   getAllAlias(alias) {
     return this.http.get(this.url + '/' + alias);
   }
@@ -38,4 +45,5 @@ export class DataService {
   getStats() {
     return this.http.get(this.url + '/tour-stats');
   }
+
 }

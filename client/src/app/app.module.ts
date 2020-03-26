@@ -13,7 +13,9 @@ import { LimitFieldsComponent } from './components/limit-fields/limit-fields.com
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { AliasComponent } from './components/alias/alias.component';
 import { StatsComponent } from './components/stats/stats.component';
-
+import { SignupComponent } from './components/signup/signup.component';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,11 @@ import { StatsComponent } from './components/stats/stats.component';
     PaginationComponent,
     AliasComponent,
     StatsComponent,
+    SignupComponent,
+    LoginComponent,
 
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, FormsModule , AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
