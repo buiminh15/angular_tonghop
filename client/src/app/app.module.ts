@@ -17,6 +17,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './shared/auth-guard.service';
 
 @NgModule({
   declarations: [

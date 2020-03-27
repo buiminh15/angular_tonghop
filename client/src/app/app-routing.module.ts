@@ -13,13 +13,14 @@ import { AliasComponent } from './components/alias/alias.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './shared/auth-guard.service';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'tours', component: ToursListComponent },
+  { path: 'tours', component: ToursListComponent, canActivate: [AuthGuard] },
   { path: 'tour-stats', component: StatsComponent },
   { path: 'top-5-cheap', component: AliasComponent },
   { path: 'pagination', component: PaginationComponent },

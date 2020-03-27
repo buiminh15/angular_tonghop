@@ -8,6 +8,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   providedIn: 'root'
 })
 export class DataService {
+
   constructor(private url: string, private http: HttpClient,) {}
 
   // USER SERVICE
@@ -18,6 +19,8 @@ export class DataService {
     return this.http.post(this.url + '/login', user).pipe(
       map(res => {
         const result = convertToJSON(res);
+        // const fakeToken =
+        // 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlN2I2ZjEzMWE3NjJkMmU5MDNjOTY5MyIsImlhdCI6MTU4NTI3OTA5NywiZXhwIjoxNTkzMDU1MDk3LCJhZG1pbiI6ZmFsc2V9.dABXNORUxT2U6eaxplUAj5QWWOPQxjRXSEej-Zvz2ts'
         if (result && result.token) {
           localStorage.setItem('tokenNatours', result.token);
           return true;
@@ -46,6 +49,15 @@ export class DataService {
     console.log('Expiration ', expirationDate)
     console.log('isExpired ', isExpired)
     return !isExpired;
+  }
+
+  get currentUser() {
+    const token = localStorage.getItem('tokenNatours')
+    if (!token) {
+      return null
+    }
+
+    return new JwtHelperService().decodeToken(token)
   }
 
   // TOUR SERVICE
