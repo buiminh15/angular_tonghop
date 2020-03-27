@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/shared/users.service';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { convertToJSON } from '../../shared/utils'
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { convertToJSON } from '../../shared/utils'
 export class LoginComponent implements OnInit {
   email: string;
   password: string;
-  constructor(private service: UsersService, private router: Router) { }
+  constructor(private service: UsersService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -23,8 +23,11 @@ export class LoginComponent implements OnInit {
     }
     if (form.valid) {
       this.service.login(user).subscribe(res => {
-        alert('Done')
-        this.router.navigate(['/tours']);
+        if (res) {
+          alert('Done')
+          const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl')
+          this.router.navigate([returnUrl || '/']);
+        }
       },
         err => {
           alert(err.error.message);
