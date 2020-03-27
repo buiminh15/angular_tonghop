@@ -12,12 +12,14 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { AliasComponent } from './components/alias/alias.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
-  { path: '', component: SignupComponent },
+  { path: '', component: HomeComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  // { path: '', component: ToursListComponent },
+  { path: 'tours', component: ToursListComponent },
   { path: 'tour-stats', component: StatsComponent },
   { path: 'top-5-cheap', component: AliasComponent },
   { path: 'pagination', component: PaginationComponent },
@@ -25,7 +27,7 @@ const routes: Routes = [
   { path: 'sort', component: SortComponent },
   { path: 'search', component: SearchComponent },
   { path: 'tours/new', component: NewTourComponent },
-  { path: 'tours', pathMatch: 'full', redirectTo: '' },
+  // { path: 'tours', pathMatch: 'full', redirectTo: '' },
   { path: 'tours/:id', component: ToursItemComponent },
   { path: '**', component: PageNotFoundComponent }
 ];

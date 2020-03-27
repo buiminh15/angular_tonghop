@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/shared/users.service';
 import { NgForm } from '@angular/forms';
-
+import { Router } from '@angular/router';
+import { convertToJSON } from '../../shared/utils'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
   email: string;
   password: string;
-  constructor(private service: UsersService) { }
+  constructor(private service: UsersService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -22,12 +23,12 @@ export class LoginComponent implements OnInit {
     }
     if (form.valid) {
       this.service.login(user).subscribe(res => {
-        alert('Done');
-        console.log(res)
+        alert('Done')
+        this.router.navigate(['/tours']);
       },
-      err => {
-        alert(err.error.message);
-      }
+        err => {
+          alert(err.error.message);
+        }
       );
     }
   }
