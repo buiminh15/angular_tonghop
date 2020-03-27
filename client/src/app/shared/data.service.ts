@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { convertToJSON } from './utils';
 import { Observable } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  constructor(private url: string, private http: HttpClient) {}
+  constructor(private url: string, private http: HttpClient,) {}
 
   // USER SERVICE
   signup(newUser) {
@@ -31,7 +32,20 @@ export class DataService {
   }
 
   isLoggedIn() {
-    return false;
+    // const token = localStorage.getItem('tokenNatours')
+    // return this.jwtHelper.isTokenExpired(token);
+    const helper = new JwtHelperService();
+    const token = localStorage.getItem('tokenNatours')
+    if (!token) {
+      return false;
+    }
+
+    const expirationDate = helper.getTokenExpirationDate(token)
+    const isExpired = helper.isTokenExpired(token)
+
+    console.log('Expiration ', expirationDate)
+    console.log('isExpired ', isExpired)
+    return !isExpired;
   }
 
   // TOUR SERVICE
