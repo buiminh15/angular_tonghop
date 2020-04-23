@@ -14,19 +14,21 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './shared/auth-guard.service';
+import { AdminAuthGuard } from './shared/admin-auth-guard.service';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'no-access', component: PageNotFoundComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'tours', component: ToursListComponent, canActivate: [AuthGuard] },
+  { path: 'tours', component: ToursListComponent, canActivate: [AuthGuard, AdminAuthGuard] },
   { path: 'tour-stats', component: StatsComponent },
   { path: 'top-5-cheap', component: AliasComponent },
   { path: 'pagination', component: PaginationComponent },
   { path: 'limit', component: LimitFieldsComponent },
-  { path: 'sort', component: SortComponent, canActivate: [AuthGuard]  },
-  { path: 'search', component: SearchComponent, canActivate: [AuthGuard]  },
+  { path: 'sort', component: SortComponent, canActivate: [AuthGuard, AdminAuthGuard]  },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard, AdminAuthGuard]  },
   { path: 'tours/new', component: NewTourComponent },
   // { path: 'tours', pathMatch: 'full', redirectTo: '' },
   { path: 'tours/:id', component: ToursItemComponent },
