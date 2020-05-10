@@ -4,12 +4,12 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#" (click)="onSelect('recipe')">Recipes</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/recipes']" >Recipes</a>
 
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#" (click)="onSelect('shopping-list')">Shopping List</a>
+      <li class="nav-item " routerLinkActive="active">
+        <a class="nav-link"  [routerLink]="['/shopping-list']">Shopping List</a>
       </li>
     </ul>
     <ul class="navbar-nav navbar-right">
@@ -29,8 +29,8 @@
         </a>
         <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
             role="menu" aria-labelledby="button-basic">
-          <li role="menuitem"><a class="dropdown-item" href="#">Save Data</a></li>
-          <li role="menuitem"><a class="dropdown-item" href="#">Fetch Data</a></li>
+          <li role="menuitem"><a class="dropdown-item">Save Data</a></li>
+          <li role="menuitem"><a class="dropdown-item">Fetch Data</a></li>
         </ul>
       </li>
     </ul>
