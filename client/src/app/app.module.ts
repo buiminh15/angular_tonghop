@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -37,6 +38,7 @@ import { RecipeService } from './recipes/recipe-list/recipe.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     BsDropdownModule.forRoot()
   ],
   providers: [RecipeService],

@@ -29,8 +29,8 @@
         </a>
         <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
             role="menu" aria-labelledby="button-basic">
-          <li role="menuitem"><a class="dropdown-item">Save Data</a></li>
-          <li role="menuitem"><a class="dropdown-item">Fetch Data</a></li>
+          <li role="menuitem"><a class="dropdown-item" (click)="onSaveData()">Save Data</a></li>
+          <li role="menuitem"><a class="dropdown-item" (click)="onFetchData()">Fetch Data</a></li>
         </ul>
       </li>
     </ul>
